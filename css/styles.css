@@ -474,9 +474,6 @@ footer .team-container-list-item-card-icons {
 }
 
 .pagefooter-list-item {
-    transition-property: background-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     width: 40px;
     height: 40px;
 }
@@ -489,6 +486,9 @@ footer .team-container-list-item-card-icons {
     height: 100%;
     border-radius: 50%;
     background-color: #4d5ae5;
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .pagefooter-list-item-icon:hover,
