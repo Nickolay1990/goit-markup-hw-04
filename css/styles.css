@@ -59,6 +59,8 @@ button:focus {
 /* ====================== header ============================= */
 .pageheader {
     border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .container {
@@ -100,9 +102,6 @@ button:focus {
     display: flex;
     gap: 40px;
 }
-.pageheader-container-navigation-list-item {
-    position: relative;
-}
 
 .pageheader-container-navigation-list-item-link {
     color: #2e2f42;
@@ -117,6 +116,11 @@ button:focus {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.position-rel {
+    position: relative;
+    color: #404bbf;
+}
+
 .current-page::after {
     content: '';
     display: block;
@@ -124,8 +128,9 @@ button:focus {
     width: 100%;
     height: 4px;
     background-color: #404bbf;
-    margin: 20px auto 0;
     position: absolute;
+    left: 0;
+    bottom: -1px;
 }
 
 .pageheader-container-address {
@@ -164,6 +169,8 @@ button:focus {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .hero-container-title {
@@ -225,10 +232,13 @@ button:focus {
 
 .advantages-container-list-item-div {
     background-color: #f4f4fd;
-    padding: 24px 100px;
     margin-bottom: 8px;
     border: 1px solid #8e8f99;
     border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 112px;
 }
 
 .advantages-container-list-item-title {
@@ -275,7 +285,7 @@ button:focus {
 }
 
 .team-container-list-item-card {
-    padding: 32px 16px;
+    padding: 32px 0;
 }
 
 .team-container-list-item-title {
@@ -298,18 +308,34 @@ button:focus {
 .team-container-list-item-card-icons {
     display: flex;
     gap: 24px;
+    justify-content: center;
 }
 
-.team-container-list-item-card-icons li {
-    background-color: #4d5ae5;
+.team-container-list-item-card-icons-item {
     flex-basis: 40px;
     height: 40px;
+}
+
+.team-container-list-item-card-icons-item-link {
+    width: 100%;
+    height: 100%;
+    background-color: #4d5ae5;
+    display: flex;
     border-radius: 50%;
-    padding: 12px;
+    align-items: center;
+    justify-content: center;
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-container-list-item-card-icons-item-link:hover,
+.team-container-list-item-card-icons-item-link:focus {
+    background-color: #404bbf;
 }
 
 .team-container-list-item-card-icons-icon {
-    fill: #ffffff;
+    fill: #f4f4fd;
 }
 
 /* ====================== portfolio ============================= */
@@ -357,7 +383,7 @@ button:focus {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #404bbf;
+    background-color: #4d5ae5;
     transform: translateY(100%);
     transition-property: transform;
     transition-duration: 250ms;
@@ -367,7 +393,7 @@ button:focus {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #f4f4fd;
-    padding: 40px 32px 0;
+    padding: 40px 32px;
 }
 
 .portfolio-container-list-item-wrapper {
@@ -399,7 +425,11 @@ button:focus {
 
 .pagefooter .container {
     display: flex;
-    gap: 120px;
+    align-items: baseline;
+}
+
+.pagefooter-container-first {
+    margin-right: 120px;
 }
 
 .footer-container-logo {
@@ -436,20 +466,32 @@ button:focus {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #fff;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 }
 
-.pageheader-container-second ul {
+footer .team-container-list-item-card-icons {
     gap: 16px;
 }
 
-.pageheader-container-second li {
+.pagefooter-list-item {
     transition-property: background-color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    width: 40px;
+    height: 40px;
 }
 
-.pageheader-container-second li:hover,
-.pageheader-container-second li:has(a:focus) {
+.pagefooter-list-item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #4d5ae5;
+}
+
+.pagefooter-list-item-icon:hover,
+.pagefooter-list-item-icon:focus {
     background-color: #31d0aa;
 }
